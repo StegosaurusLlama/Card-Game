@@ -1,0 +1,26 @@
+# Godot-specific ignores
+.godot/
+export_presets.cfg
+*.import
+*.translation
+*.tscn.converted
+*.gdns
+*.gdnlib
+*.gdc
+*.release
+*.debug
+*.mono
+*.csproj
+*.sln
+.vs/
+bin/
+obj/
+build/
+
+# OS/Editor ignores
+.DS_Store
+Thumbs.db
+Desktop.ini
+*.bak
+*~
+*.log
