@@ -1,10 +1,51 @@
-[gd_scene load_steps=9 format=3 uid="uid://da3p20kfxcux"]
+[gd_scene load_steps=14 format=3 uid="uid://da3p20kfxcux"]
 
 [ext_resource type="Script" uid="uid://b26lqtrxqr7uh" path="res://Scripts/card.gd" id="1_0y7kv"]
-[ext_resource type="Texture2D" uid="uid://6dodibpji27p" path="res://icon.svg" id="1_hfbw4"]
+[ext_resource type="Script" uid="uid://c1j6s6b0cflsa" path="res://Scenes/camera_2d.gd" id="1_gnhfv"]
+[ext_resource type="Texture2D" uid="uid://bxo8omls2xmos" path="res://icon.svg" id="1_hfbw4"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_hfbw4"]
-size = Vector2(96, 159)
+[sub_resource type="ImageTexture" id="ImageTexture_0y7kv"]
+
+[sub_resource type="Animation" id="Animation_tjil8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("ImageTexture_0y7kv")]
+}
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pp820"]
+atlas = ExtResource("1_hfbw4")
+region = Rect2(0, 0, 122, 72.5)
+
+[sub_resource type="Animation" id="Animation_641a4"]
+resource_name = "new_animation"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.46666667, 1),
+"transitions": PackedFloat32Array(1, 1, 8.574188),
+"update": 1,
+"values": [SubResource("AtlasTexture_pp820"), ExtResource("1_hfbw4"), SubResource("AtlasTexture_pp820")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_10kch"]
+_data = {
+&"RESET": SubResource("Animation_tjil8"),
+&"new_animation": SubResource("Animation_641a4")
+}
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0y7kv"]
 atlas = ExtResource("1_hfbw4")
@@ -45,6 +86,7 @@ animations = [{
 [node name="Node2D" type="Node2D"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
+script = ExtResource("1_gnhfv")
 
 [node name="ReferenceRect" type="ReferenceRect" parent="Camera2D"]
 show_behind_parent = true
@@ -77,16 +119,26 @@ color = Color(0.818704, 0.528343, 0.298796, 1)
 [node name="Card" type="Node2D" parent="."]
 script = ExtResource("1_0y7kv")
 
-[node name="Area2D" type="Area2D" parent="Card"]
+[node name="Area2D" type="TextureRect" parent="Card"]
+texture = SubResource("ImageTexture_0y7kv")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Card/Area2D"]
-position = Vector2(0, 0.5)
-shape = SubResource("RectangleShape2D_hfbw4")
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Card/Area2D"]
+libraries = {
+&"": SubResource("AnimationLibrary_10kch")
+}
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Card"]
 scale = Vector2(3, 5)
 sprite_frames = SubResource("SpriteFrames_608x6")
 frame_progress = 0.202197
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+offset_left = 289.0
+offset_top = 110.0
+offset_right = 329.0
+offset_bottom = 150.0
 
 [connection signal="mouse_entered" from="Card/Area2D" to="Card" method="_on_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="Card/Area2D" to="Card" method="_on_area_2d_mouse_exited"]

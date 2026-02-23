@@ -1,5 +1,3 @@
-extends Node
-
 class_name DrawPile
 
 var cards:Array[int]

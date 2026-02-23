@@ -13,6 +13,7 @@ func _ready() -> void:
 	animator = get_node("AnimatedSprite2D")
 	print("Ready: " + str(global.is_dragging))
 	animator.play("default")
+	$Area2D/AnimationPlayer.play("new_animation")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
