@@ -11,7 +11,7 @@ var is_dragging = false
 func _ready() -> void:
 	hitBox = get_node("Area2D")
 	animator = get_node("AnimatedSprite2D")
-	print("Ready: " + str(global.is_dragging))
+	# print("Ready: " + str(global.is_dragging))
 	animator.play("default")
 	$Area2D/AnimationPlayer.play("new_animation")
 
@@ -20,11 +20,11 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if draggable:
 		if Input.is_action_pressed("click"):
-			global.is_dragging = true
+			# global.is_dragging = true
 			is_dragging = true
 			position = get_global_mouse_position()
 		elif Input.is_action_just_released("click"):
-			global.is_dragging = false
+			# global.is_dragging = false
 			is_dragging = false
 			baseTransform.x = position.x
 			baseTransform.y = position.y
@@ -33,8 +33,8 @@ func _process(delta: float) -> void:
 
 
 func _on_area_2d_mouse_entered() -> void:
-	print("Entered: " + str(global.is_dragging))
-	if not global.is_dragging:
+	# print("Entered: " + str(global.is_dragging))
+	if not is_dragging:
 		print("Checked")
 		draggable = true
 		scale = baseScale * 1.05
@@ -43,8 +43,8 @@ func _on_area_2d_mouse_entered() -> void:
 
 
 func _on_area_2d_mouse_exited() -> void:
-	print("Entered: " + str(global.is_dragging))
-	if not global.is_dragging:
+	# print("Entered: " + str(global.is_dragging))
+	if not is_dragging:
 		print("Checked")
 		draggable = false
 		scale = baseScale

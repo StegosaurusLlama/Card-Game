@@ -7,3 +7,9 @@
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="HandUI" parent="CanvasLayer" instance=ExtResource("1_a02cp")]
+
+[node name="Boss" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0

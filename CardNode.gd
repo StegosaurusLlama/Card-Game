@@ -1,11 +1,16 @@
 extends Control
+class_name UICard
 
 @onready var label = $Panel/Label
 var card_id:int
 var selected:bool = false
 
-func _init(id:int = 0):
-	card_id = id
+static var card_scene = preload("res://card.tscn")
+
+static func create(id:int = 0) -> UICard:
+	var card = card_scene.instantiate()
+	card.card_id = id
+	return card
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
