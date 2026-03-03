@@ -1,6 +1,5 @@
 extends Control
 
-signal dropped_here(data:Node2D)
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -12,9 +11,7 @@ func _can_drop_data(at_position, data):
 # Built in godot function. Implementing allows recieving dropped data.
 func _drop_data(at_position, data): # data is UICard
 	var card:UICard = data
+	card.is_in_hand = false
+	card.reparent(self)
+	card.position = at_position - card.drag_offset
 	print(card.card_id)
-	dropped_here.emit(data)
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass

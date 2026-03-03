@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bxymmbqmliucs"]
+[gd_scene load_steps=3 format=3 uid="uid://bxymmbqmliucs"]
 
 [ext_resource type="PackedScene" uid="uid://b6u3144byo0vp" path="res://hand.tscn" id="1_a02cp"]
+[ext_resource type="PackedScene" uid="uid://c5uy1apxlrnqc" path="res://Scenes/enemy.tscn" id="2_go701"]
 
 [node name="World" type="Node2D"]
 
@@ -8,8 +9,8 @@
 
 [node name="HandUI" parent="CanvasLayer" instance=ExtResource("1_a02cp")]
 
-[node name="Boss" type="Control" parent="CanvasLayer"]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="Boss" parent="CanvasLayer" instance=ExtResource("2_go701")]
+offset_left = 203.0
+offset_top = 55.0
+offset_right = 960.0
+offset_bottom = 393.0

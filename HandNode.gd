@@ -8,15 +8,19 @@ func _ready():
 
 # Built in godot funtion. Implementing lets the program know what can be dragged here / where dragging is valid,
 func _can_drop_data(at_position, data):
-	return true
+	return data is UICard
 	
 # Built in godot function. Implementing allows recieving dropped data.
-func _drop_data(at_position, data):
-	print(data)
+func _drop_data(at_position, data): # data is UICard
+	var card:UICard = data
+	card.is_in_hand = true
+	card.reparent(slots)
+	print(card.card_id)
 
 func add_card(id:int):
 	Master.hand.add_card(id)
 	var card = UICard.create(id)
+	card.is_in_hand = true
 	slots.add_child(card)
 
 func remove_card(pos:int):

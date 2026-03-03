@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://c5uy1apxlrnqc"]
+
+[ext_resource type="Script" uid="uid://dyyknq188jxja" path="res://Scripts/enemy.gd" id="1_hghv2"]
+
+[node name="Boss" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 757.0
+offset_bottom = 338.0
+script = ExtResource("1_hghv2")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
