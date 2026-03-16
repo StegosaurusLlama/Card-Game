@@ -12,6 +12,7 @@ func _can_drop_data(at_position, data):
 # Built in godot function. Implementing allows recieving dropped data.
 func _drop_data(at_position, data): # data is UICard
 	var card:UICard = data
+	card.visible = true
 	print(card.card_id)
 	dropped_here.emit(data)
 

@@ -26,6 +26,7 @@ func _get_drag_data(at_position):
 	card_preview.position = -at_position
 	drag_offset = at_position
 	temp.add_child(card_preview)
+	visible = false
 	set_drag_preview(temp)
 	return self
 
@@ -34,7 +35,7 @@ func _can_drop_data(at_position, data):
 	
 func _drop_data(at_position, data):
 	var card:UICard = data
-	card.reparent(get_parent())
+	card.drop_onto(get_parent())
 	card.is_in_hand = true
 	get_parent().move_child(card, get_index())
 
@@ -44,3 +45,7 @@ func _gui_input(event):
 			selected = true
 		elif event.button_index == MOUSE_BUTTON_LEFT and !event.pressed:
 			selected = false
+
+func drop_onto(parent:Node):
+	visible = true
+	reparent(parent)

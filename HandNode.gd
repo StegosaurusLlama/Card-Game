@@ -14,7 +14,7 @@ func _can_drop_data(at_position, data):
 func _drop_data(at_position, data): # data is UICard
 	var card:UICard = data
 	card.is_in_hand = true
-	card.reparent(slots)
+	card.drop_onto(slots)
 	print(card.card_id)
 
 func add_card(id:int):
