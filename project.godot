@@ -17,7 +17,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-Master="*res://master.gd"
+Master="*res://Scripts/master.gd"
 
 [input]
 

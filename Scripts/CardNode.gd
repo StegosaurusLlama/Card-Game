@@ -7,7 +7,7 @@ var selected:bool = false
 var drag_offset:Vector2 = Vector2.ZERO
 var is_in_hand:bool = false
 
-static var card_scene = preload("res://card.tscn")
+static var card_scene = preload("res://Prefabs/card.tscn")
 
 static func create(id:int = 0) -> UICard:
 	var card = card_scene.instantiate()
