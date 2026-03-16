@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bxymmbqmliucs"]
 
-[ext_resource type="PackedScene" uid="uid://b6u3144byo0vp" path="res://hand.tscn" id="1_a02cp"]
 [ext_resource type="PackedScene" uid="uid://c5uy1apxlrnqc" path="res://Scenes/enemy.tscn" id="2_go701"]
+[ext_resource type="PackedScene" uid="uid://b6u3144byo0vp" path="res://Prefabs/hand.tscn" id="1_a02cp"]
 
 [node name="World" type="Node2D"]
 
