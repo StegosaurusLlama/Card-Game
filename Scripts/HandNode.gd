@@ -1,11 +1,15 @@
 extends Control
 
 var hand:Hand
-@onready var card_scene = preload("res://card.tscn")
+@onready var card_scene = preload("res://Prefabs/card.tscn")
 
 @onready var slots = $ScrollContainer/Slots
 
+
 func _init(h:Hand = null):
+	var card_json = FileAccess.open("res://Options/card.json", FileAccess.READ);
+	var card_types = JSON.parse_string(card_json.get_as_text())
+	print(JSON.stringify(card_types))
 	if h:
 		hand = h
 	else:
