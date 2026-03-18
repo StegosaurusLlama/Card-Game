@@ -24,7 +24,7 @@ static func create(id:int = 0) -> UICard:
 func _ready():
 	card_name.text = card_dict["name"]
 	card_desc.text = card_dict["flavor"]
-	card_art.texture = ImageTexture.create_from_image(Image.load_from_file("res://Sprites/Cards/" + card_dict["name"] + ".png"))
+	card_art.texture = load("res://Sprites/Cards/" + card_dict["name"] + ".png")
 
 
 # Built in godot function. Implementing enables dragability.
@@ -32,6 +32,7 @@ func _get_drag_data(at_position):
 	var card_preview = create(card_id)
 	var temp = Control.new()
 	card_preview.position = -at_position
+	card_preview.modulate = Color(1,1,1,0.5)
 	drag_offset = at_position
 	temp.add_child(card_preview)
 	visible = false
