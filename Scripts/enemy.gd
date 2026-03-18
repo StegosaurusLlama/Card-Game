@@ -14,4 +14,4 @@ func _drop_data(at_position, data): # data is UICard
 	card.is_in_hand = false
 	card.drop_onto(self)
 	card.position = at_position - card.drag_offset
-	print(card.card_id)
+	print_debug(card.id)

@@ -9,7 +9,7 @@ var hand:Hand
 func _init(h:Hand = null):
 	var card_json = FileAccess.open("res://Options/card.json", FileAccess.READ);
 	var card_types = JSON.parse_string(card_json.get_as_text())
-	print(JSON.stringify(card_types))
+	print_debug(JSON.stringify(card_types))
 	if h:
 		hand = h
 	else:
@@ -28,9 +28,9 @@ func _drop_data(_at_position, data): # data is UICard
 	var card:UICard = data
 	card.is_in_hand = true
 	card.drop_onto(slots)
-	print(card.card_id)
+	print_debug(card.id)
 
-func add_card(id:int):
+func add_card(id:String):
 	Master.hand.add_card(id)
 	var card = UICard.create(id)
 	card.is_in_hand = true

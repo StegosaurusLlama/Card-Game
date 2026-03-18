@@ -14,4 +14,4 @@ func _drop_data(_at_position, data): # data is UICard
 	if data is UICard:
 		var card:UICard = data
 		card.visible = true
-		print('cant drop here')
+		print_debug('cant drop here')

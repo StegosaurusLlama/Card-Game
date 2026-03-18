@@ -3,9 +3,9 @@ class_name Hand
 @export var max_hand_size:int = 5
 
 var size = 0
-var cards:Array[int]
+var cards:Array[String]
 
-func add_card(id:int)->bool:
+func add_card(id:String)->bool:
 	if size >= max_hand_size:
 		return false
 	cards.push_back(id)

@@ -1,20 +1,20 @@
 class_name Deck
 
 var size = 0
-var contents:Array[int]
+var contents:Array[String]
 
-func _init(data:Array[int] = []):
+func _init(data:Array[String] = []):
 	if data.is_empty():
-		contents = [1,2,3,4,5]
+		contents = ["","","","",""]
 	else:
 		contents = data.duplicate()
 	size = contents.size()
 		
 	
-func add(id:int):
+func add(id:String):
 	size += 1
 	contents.push_back(id)
 	
-func remove(id:int):
+func remove(id:String):
 	size -= 1
 	contents.erase(id)

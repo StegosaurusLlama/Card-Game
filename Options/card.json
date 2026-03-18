@@ -1,22 +1,32 @@
 {
-	"1": {
+	"": {
+		"name": "DEFAULT",
+		"desc": "Insert description here",
+		"img": "Sprites/Cards/Default.png"
+	},
+	"Smite": {
 		"name": "Smite",
-		"flavor": "SMITE YOUR FOES"
+		"desc": "SMITE YOUR FOES",
+		"img": "Sprites/Cards/Smite.png"
 	},
-	"2": {
+	"Un-Smite": {
 		"name": "Un-Smite",
-		"flavor": "Oh, that one wasn't a foe"
+		"desc": "Oh, that one wasn't a foe",
+		"img": "Sprites/Cards/Un-Smite.png"
 	},
-	"3": {
+	"Jab": {
 		"name": "Jab",
-		"flavor": "In the gut!"
+		"desc": "In the gut!",
+		"img": "Sprites/Cards/Jab.png"
 	},
-	"4": {
+	"Smack": {
 		"name": "Smack",
-		"flavor": "*SMACK*"
+		"desc": "*SMACK*",
+		"img": "Sprites/Cards/Smack.png"
 	},
-	"5": {
+	"Run Away": {
 		"name": "Run Away",
-		"flavor": "NOPE, I'M OUTA HERE"
+		"desc": "NOPE, I'M OUTA HERE",
+		"img": "Sprites/Cards/Run Away.png"
 	},
 }

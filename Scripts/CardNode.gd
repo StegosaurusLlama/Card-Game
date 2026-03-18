@@ -1,11 +1,11 @@
 extends Control
 class_name UICard
 
-@onready var card_name = $Panel/VBoxContainer/Name
+@onready var card_name_node = $Panel/VBoxContainer/Name
 @onready var card_desc = $Panel/VBoxContainer/Decription
 @onready var card_art = $"Panel/VBoxContainer/Card Art"
 
-var card_id:int
+var id:String
 var card_dict:Dictionary
 var selected:bool = false
 var drag_offset:Vector2 = Vector2.ZERO
@@ -13,23 +13,23 @@ var is_in_hand:bool = false
 
 static var card_scene = preload("res://Prefabs/card.tscn")
 
-static func create(id:int = 0) -> UICard:
-	var card = card_scene.instantiate()
-	card.card_id = id
+static func create(card_id:String = "") -> UICard:
+	var card:UICard = card_scene.instantiate()
+	card.id = card_id
 	var card_json_file: FileAccess = FileAccess.open("res://Options/card.json", FileAccess.READ);
-	card.card_dict = JSON.parse_string(card_json_file.get_as_text())[str(id)]
+	card.card_dict = JSON.parse_string(card_json_file.get_as_text())[card_id]
 	return card
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	card_name.text = card_dict["name"]
-	card_desc.text = card_dict["flavor"]
-	card_art.texture = load("res://Sprites/Cards/" + card_dict["name"] + ".png")
+	card_name_node.text = card_dict["name"]
+	card_desc.text = card_dict["desc"]
+	card_art.texture = load(card_dict["img"])
 
 
 # Built in godot function. Implementing enables dragability.
 func _get_drag_data(at_position): 
-	var card_preview = create(card_id)
+	var card_preview = create(id)
 	var temp = Control.new()
 	card_preview.position = -at_position
 	card_preview.modulate = Color(1,1,1,0.5)
