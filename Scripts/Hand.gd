@@ -17,6 +17,7 @@ func remove_card(pos:int):
 		push_error("%d is out of bounds for hand" % pos)
 	cards.remove_at(pos)
 
+# currently unused
 func swap_pos(pos_a:int, pos_b:int):
 	if pos_a >= size:
 		push_error("%d is out of bounds for hand" % pos_a)
@@ -26,11 +27,3 @@ func swap_pos(pos_a:int, pos_b:int):
 	pos_b ^= pos_a
 	pos_a ^= pos_b
 	
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass

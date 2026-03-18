@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://c5h8ks1i6su5m"]
+[gd_scene load_steps=3 format=3 uid="uid://c5h8ks1i6su5m"]
 
 [ext_resource type="Script" uid="uid://belw7dssok5je" path="res://Scripts/background.gd" id="1_4a6i6"]
+[ext_resource type="VideoStream" uid="uid://dpumku1nspwst" path="res://Animations/space.ogv" id="2_l3dar"]
 
 [node name="Background" type="Control"]
+clip_contents = true
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -15,11 +17,20 @@ script = ExtResource("1_4a6i6")
 
 [node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -600.0
+offset_top = -600.0
+offset_right = 600.0
+offset_bottom = 600.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
+stream = ExtResource("2_l3dar")
 autoplay = true
+expand = true
 loop = true
 buffering_msec = 1000

@@ -1,5 +1,22 @@
 {
-	"card": "test",
-	"id": 2,
-	"flavor": "KLJSDFOIJEWJFOILKSDJFOIEW"
+	"1": {
+		"name": "Smite",
+		"flavor": "SMITE YOUR FOES"
+	},
+	"2": {
+		"name": "Un-Smite",
+		"flavor": "Oh, that one wasn't a foe"
+	},
+	"3": {
+		"name": "Jab",
+		"flavor": "In the gut!"
+	},
+	"4": {
+		"name": "Smack",
+		"flavor": "*SMACK*"
+	},
+	"5": {
+		"name": "Run Away",
+		"flavor": "NOPE, I'M OUTA HERE"
+	},
 }

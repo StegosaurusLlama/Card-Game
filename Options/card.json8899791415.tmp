@@ -1,0 +1,18 @@
+{
+	"1" : {
+		"name" : "Smite",
+		"flavor" : "SMITE YOUR ENEMIES"
+	},
+	"2" : {
+		"name" : "Un-Smite",
+		"flavor" : "Oh that one wasn't an enemy"
+	},
+	"3" : {
+		"name" : "Hug",
+		"flavor" : "Embrace your friends and crush your foes"
+	},
+	"4" : {
+		"name" : "Smack",
+		"flavor" : "*smack*"
+	}
+}

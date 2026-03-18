@@ -6,11 +6,11 @@ func _ready():
 	pass # Replace with function body.
 
 # Built in godot funtion. Implementing lets the program know what can be dragged here / where dragging is valid,
-func _can_drop_data(at_position, data):
+func _can_drop_data(_at_position, _data):
 	return true
 	
 # Built in godot function. Implementing allows recieving dropped data.
-func _drop_data(at_position, data): # data is UICard
+func _drop_data(_at_position, data): # data is UICard
 	if data is UICard:
 		var card:UICard = data
 		card.visible = true
