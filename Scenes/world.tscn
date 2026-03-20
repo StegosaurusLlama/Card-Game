@@ -1,10 +1,12 @@
-[gd_scene load_steps=4 format=3 uid="uid://bxymmbqmliucs"]
+[gd_scene load_steps=5 format=3 uid="uid://bxymmbqmliucs"]
 
 [ext_resource type="PackedScene" uid="uid://b6u3144byo0vp" path="res://Prefabs/hand.tscn" id="1_a02cp"]
+[ext_resource type="Script" uid="uid://bg5e8xau636n5" path="res://Scenes/world.gd" id="1_fo5ed"]
 [ext_resource type="PackedScene" uid="uid://c5uy1apxlrnqc" path="res://Scenes/enemy.tscn" id="2_go701"]
 [ext_resource type="PackedScene" uid="uid://c5h8ks1i6su5m" path="res://Prefabs/background.tscn" id="3_5a7ea"]
 
 [node name="World" type="Node2D"]
+script = ExtResource("1_fo5ed")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

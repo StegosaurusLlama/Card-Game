@@ -1,6 +1,5 @@
-[gd_scene load_steps=3 format=3 uid="uid://c5h8ks1i6su5m"]
+[gd_scene load_steps=2 format=3 uid="uid://c5h8ks1i6su5m"]
 
-[ext_resource type="Script" uid="uid://belw7dssok5je" path="res://Scripts/background.gd" id="1_4a6i6"]
 [ext_resource type="VideoStream" uid="uid://dpumku1nspwst" path="res://Animations/space.ogv" id="2_l3dar"]
 
 [node name="Background" type="Control"]
@@ -13,7 +12,6 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-script = ExtResource("1_4a6i6")
 
 [node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
 layout_mode = 1
