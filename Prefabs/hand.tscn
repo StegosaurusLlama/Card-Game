@@ -1,12 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://b6u3144byo0vp"]
 
-<<<<<<< HEAD
-[ext_resource type="Script" path="res://Scripts/HandNode.gd" id="1_qmkkg"]
-[ext_resource type="Script" path="res://Scripts/camera_2d.gd" id="2_kuyok"]
-[ext_resource type="VideoStream" uid="uid://dao1lt0g8ihql" path="res://Animations/space2.ogv" id="3_kuyok"]
-=======
 [ext_resource type="Script" uid="uid://cooxyqhk37kaj" path="res://Scripts/HandNode.gd" id="1_qmkkg"]
->>>>>>> refs/remotes/origin/master
 
 [node name="HandUI" type="Control"]
 layout_mode = 3
@@ -21,42 +15,6 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_qmkkg")
 
-<<<<<<< HEAD
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(333, -147)
-script = ExtResource("2_kuyok")
-
-[node name="ReferenceRect" type="ReferenceRect" parent="Camera2D"]
-show_behind_parent = true
-light_mask = 0
-visibility_layer = 512
-clip_contents = true
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -576.0
-offset_top = -324.0
-offset_right = 576.0
-offset_bottom = 324.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-mouse_force_pass_scroll_events = false
-
-[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="Camera2D/ReferenceRect"]
-layout_mode = 0
-offset_top = -332.0
-offset_right = 1151.0
-offset_bottom = 819.0
-stream = ExtResource("3_kuyok")
-volume_db = -80.0
-autoplay = true
-expand = true
-loop = true
-buffering_msec = 1000
-
-=======
->>>>>>> refs/remotes/origin/master
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
 anchors_preset = 15
