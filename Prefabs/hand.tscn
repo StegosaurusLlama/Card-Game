@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://b6u3144byo0vp"]
 
-[ext_resource type="Script" uid="uid://cooxyqhk37kaj" path="res://Scripts/HandNode.gd" id="1_qmkkg"]
-[ext_resource type="Script" uid="uid://c1j6s6b0cflsa" path="res://Scripts/camera_2d.gd" id="2_kuyok"]
-[ext_resource type="Texture2D" uid="uid://713531d4oixo" path="res://Animations/Space.png" id="3_wdihj"]
+[ext_resource type="Script" path="res://Scripts/HandNode.gd" id="1_qmkkg"]
+[ext_resource type="Script" path="res://Scripts/camera_2d.gd" id="2_kuyok"]
+[ext_resource type="VideoStream" uid="uid://dao1lt0g8ihql" path="res://Animations/space2.ogv" id="3_kuyok"]
 
 [node name="HandUI" type="Control"]
 layout_mode = 3
@@ -38,12 +38,17 @@ grow_vertical = 2
 mouse_filter = 2
 mouse_force_pass_scroll_events = false
 
-[node name="TextureRect" type="TextureRect" parent="Camera2D/ReferenceRect"]
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="Camera2D/ReferenceRect"]
 layout_mode = 0
-offset_top = -288.0
-offset_right = 1152.0
-offset_bottom = 864.0
-texture = ExtResource("3_wdihj")
+offset_top = -332.0
+offset_right = 1151.0
+offset_bottom = 819.0
+stream = ExtResource("3_kuyok")
+volume_db = -80.0
+autoplay = true
+expand = true
+loop = true
+buffering_msec = 1000
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
