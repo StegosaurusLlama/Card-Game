@@ -9,7 +9,7 @@ var hand:Hand
 func _init(h:Hand = null):
 	var card_json = FileAccess.open("res://Options/card.json", FileAccess.READ);
 	var card_types = JSON.parse_string(card_json.get_as_text())
-	print(JSON.stringify(card_types))
+	print_debug(JSON.stringify(card_types))
 	if h:
 		hand = h
 	else:
@@ -20,17 +20,17 @@ func _ready():
 		add_card(id)# Replace with function body.
 
 # Built in godot funtion. Implementing lets the program know what can be dragged here / where dragging is valid,
-func _can_drop_data(at_position, data):
+func _can_drop_data(_at_position, data):
 	return data is UICard
 	
 # Built in godot function. Implementing allows recieving dropped data.
-func _drop_data(at_position, data): # data is UICard
+func _drop_data(_at_position, data): # data is UICard
 	var card:UICard = data
 	card.is_in_hand = true
-	card.reparent(slots)
-	print(card.card_id)
+	card.drop_onto(slots)
+	print_debug(card.id)
 
-func add_card(id:int):
+func add_card(id:String):
 	Master.hand.add_card(id)
 	var card = UICard.create(id)
 	card.is_in_hand = true
